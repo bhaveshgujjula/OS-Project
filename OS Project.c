@@ -31,4 +31,19 @@ int main()
 		{
 			scanf("%d", &avail[i]);
 		} 
+	
+	int f[n], ans[n], ind = 0; 
+    	for (k = 0; k < n; k++)
+	{ 
+        	f[k] = 0; 
+    	} 
+    	int need[n][m]; 
+    	for (i = 0; i < n; i++)
+	{ 
+        	for (j = 0; j < m; j++) 
+        	{
+        		need[i][j] = max[i][j] - alloc[i][j];
+		}	
+    	}
+	 
 } 
