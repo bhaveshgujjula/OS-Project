@@ -45,5 +45,34 @@ int main()
         		need[i][j] = max[i][j] - alloc[i][j];
 		}	
     	}
+
+	int y = 0; 
+    	for (k = 0; k < 5; k++) 
+	{ 
+        	for (i = 0; i < n; i++)
+		{ 
+            		if (f[i] == 0)
+			{ 
+                		int flag = 0; 
+                		for (j = 0; j < m; j++)
+				{ 
+                    			if (need[i][j] > avail[j])
+					{ 
+                        		flag = 1; 
+                         		break; 
+                    			} 
+                		} 
+  
+                		if (flag == 0)
+				{ 
+                    			ans[ind++] = i; 
+                    			for (y = 0; y < m; y++) 
+                        			avail[y] += alloc[i][y]; 
+                    			f[i] = 1;		
+                		} 
+            		} 
+        	} 
+    	}
+        
 	 
 } 
